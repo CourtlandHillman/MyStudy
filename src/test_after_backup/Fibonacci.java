@@ -21,10 +21,10 @@ public class Fibonacci {
     
     
     public static void main(String[] args) {
-        int n=100;
+        int n=90;
         long [] mem = new long[n +1];
         Arrays.fill(mem , -1);
-        System.out.println(fibNaiv(n , mem));
+        System.out.println(fibRest(mem, n));
     }
 //   o(n)
 //    private static long fibEf(int n){
@@ -39,17 +39,28 @@ public class Fibonacci {
     // 0(n+n)=>o(2n)=>o(n)
     
     
-    private static long fibNaiv(int n , long [] mem){
-        if(mem[n] != -1)
-            return mem[n];
-        if(n<=1)
-           return n;
-        long result =fibNaiv(n-1 , mem)+fibNaiv(n-2 , mem);
-        mem[n]=result;
-        return result;
+//    private static long fibNaiv(int n , long [] mem){
+//        if(mem[n] != -1)
+//            return mem[n];
+//        if(n<=1)
+//           return n;
+//        long result =fibNaiv(n-1 , mem)+fibNaiv(n-2 , mem);
+//        mem[n]=result;
+//        return result;
+//    }
+    
+    private static long fibRest(long [] array , int n){
+     if (array[n] > -1)   
+         return array[n];
+     if (n <=1)
+         return n;
+     long result = fibRest( array , n - 1 ) +fibRest( array , n - 2);
+     array[n] = result;
+     return result;
+        
+        
     }
-    
-    
+
     
 }
     

@@ -1,32 +1,34 @@
 
 package test_after_backup;
 
+
+
 public class TestTestAlgoritms {
      
      public static void main(String[] args) {  
         int [] array = {90 , 46, 24, 11 , 42 , 83 , 97 , 10};
        // boobleSort(array);
-         bubleSort(array);
+         bubleSort1(array);
        int  n =100;
        System.out.println(fibEffective(n));
        
     }
     
    ///////////////////////////////////////////////////////////////// 
-    private  static  int boobleSort(int [] array ){
-        
-        for(int i = array.length-1; i>=0 ; i--){
-            for(int j=0; j<i ; j++){
-                if(array[j] > array[j + 1]){
-                    int temp = array[j];
-                    array[j]=array[j+1];
-                    array[j+1]= temp;
-                }
-            }
-        System.out.println(array[i]);}
-        return 0;
-    
-}
+//    private  static  int boobleSort(int [] array ){
+//        
+//        for(int i = array.length-1; i>=0 ; i--){
+//            for(int j=0; j<i ; j++){
+//                if(array[j] > array[j + 1]){
+//                    int temp = array[j];
+//                    array[j]=array[j+1];
+//                    array[j+1]= temp;
+//                }
+//            }
+//        System.out.println(array[i]);}
+//        return 0;
+//    
+//}
     ///////////////////////////////////////////////////////////////
      private static long fibEffective(int n){
         long [] arr=new long[n+1];
@@ -38,22 +40,38 @@ public class TestTestAlgoritms {
             return arr[n];
      }
      /////////////////////////////////////////////////////////////////////
-     private static int bubleSort(int [] array){
+//     private static int bubleSort(int [] array){
+//         
+//         for(int i = array.length-1; i >= 0; i--){
+//             for(int j = 0; j < i ; j++){
+//                 if(array[j] > array[j + 1]){
+//                     int temp = array[j];
+//                     array[j] = array[j + 1];
+//                     array[j + 1] = temp;
+//                     
+//             }
+//         }
+//         System.out.println(array[i]);
+//     }
+//         return 0;
+//     
+//     }
+     
+     ////////////////////////////////////////////////////////////////
+     private static int bubleSort1 (int array []){
          
-         for(int i = array.length-1; i >= 0; i--){
-             for(int j = 0; j < i ; j++){
+         for(int i = 0  ; i <= array.length -1 ; i++ ){
+             for(int j = 0; j < i; j++){
                  if(array[j] > array[j + 1]){
                      int temp = array[j];
                      array[j] = array[j + 1];
                      array[j + 1] = temp;
-                     
+                 }
              }
-         }
-         System.out.println(array[i]);
-     }
+         System.out.println( array[i]);}
+         
          return 0;
-     
-     }
+}
 }
 
     
